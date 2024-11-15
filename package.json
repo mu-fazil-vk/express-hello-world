@@ -1,12 +1,13 @@
 {
-  "name": "express-hello-world",
+  "name": "tk-live",
   "version": "1.0.0",
-  "description": "Express Hello World on Render",
+  "description": "tiktok live app",
   "main": "app.js",
-  "repository": "https://github.com/render-examples/express-hello-world",
+  "repository": "https://github.com/alexlevy0/tk-live",
   "author": "Render Developers",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "scripts": {
     "start": "node app.js"
   },
