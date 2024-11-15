@@ -31,22 +31,25 @@ wss.on("connection", (ws) => {
 		const data = JSON.parse(message);
 
 		if (data.type === "connect") {
-			// Déconnecter l'ancienne connexion si elle existe
-			if (currentTiktokConnection) {
-				await currentTiktokConnection.disconnect();
-			}
+			await disconnectTiktokConnection()
 			// Initialiser une nouvelle connexion TikTok
 			console.log('TikTok :', data.username);
 			initTiktokLiveListener(data.username, ws);
 		}
 	});
 
-	ws.on("close", () => {
+	ws.on("close", async () => {
 		console.log("Client WebSocket déconnecté");
 		wsConnections.delete(ws);
-		currentTiktokConnection.disconnect()
+		await disconnectTiktokConnection()
 	});
 });
+
+const disconnectTiktokConnection = async () => {
+	if (currentTiktokConnection) {
+		await currentTiktokConnection.disconnect();
+	}
+}
 
 const tiktokConfig = {
 	processInitialData: false,
@@ -65,7 +68,6 @@ const initTiktokLiveListener = async (tiktokLiveAccount, ws) => {
 		console.info(`Connecté à roomId ${state.roomId}`);
 		console.info(`Connecté au compte TikTok Live ${tiktokLiveAccount}`);
 
-		// Envoyer confirmation de connexion au client
 		ws.send(
 			JSON.stringify({
 				type: "connection_status",
@@ -122,7 +124,6 @@ const initTiktokLiveListener = async (tiktokLiveAccount, ws) => {
 	}
 };
 
-// Servir l'index.html
 app.get("/", async (req, res) => {
 	try {
 		const htmlPath = join(__dirname, 'index.html');
