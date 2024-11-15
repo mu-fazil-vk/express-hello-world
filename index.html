@@ -198,10 +198,9 @@
 					const messageDiv = document.createElement("div")
 					messageDiv.className = "chat-message"
 					messageDiv.innerHTML = `
-			      <span class="username">${data.username}:</span>
-			      <span class="message">${data.message}</span>
-			    `
-
+                                                <span class="username">${data.username}:</span>
+                                                <span class="message">${data.message}</span>
+                                                `
 					chatContainer.appendChild(messageDiv)
 					chatContainer.scrollTop = chatContainer.scrollHeight
 				}
