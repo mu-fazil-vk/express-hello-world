@@ -77,11 +77,11 @@ const html = `
       <input type="password" id="password" name="password" required>
             
       <button onclick="showScreen('home')">LOG IN</button> 
-    <div>
+    </div>
 
     <div id="home" style="display: none;">
       <h2>Kappa Sigma Fraternity</h2>
-    <div>
+    </div>
 
     <script>
       function showScreen(id) {
