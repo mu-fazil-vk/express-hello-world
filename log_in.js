@@ -28,13 +28,6 @@ const html = `
         height: 100vh;
         margin: 0;
       }
-      .login-container {
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 900px;
-      }
       h2 {
         text-align: center;
         margin-bottom: 20px;
@@ -80,7 +73,7 @@ const html = `
     </div>
 
     <div id="home" style="display: none;">
-      <h2>Kappa Sigma Fraternity</h2>
+      <img src="images/homeImage.png" alt="Logo">
     </div>
 
     <script>
