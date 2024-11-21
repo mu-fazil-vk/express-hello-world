@@ -68,17 +68,15 @@ const html = `
     </style>
   </head>
   <body>
-    <div id=login style="display: block;" class="login-container">
+    <div id=login style="display: block;">
       <h2>LOG IN</h2>
-      <form action="/login" method="POST">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
             
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
             
-        <button onclick="showScreen('home')">LOG IN</button>
-      </form>
+      <button onclick="showScreen('home')">LOG IN</button> 
     <div>
 
     <div id=home style="display: none;>
