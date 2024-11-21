@@ -31,7 +31,10 @@ const html = `
         background: #185012;
         font-family: Arial, sans-serif;
         display: flex;
+        justify-content: center;
         align-items: center;
+        height: 100vh;
+        margin: 0;
       }
       .login-container {
         background-color: #ffffff;
