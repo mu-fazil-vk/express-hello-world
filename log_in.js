@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
+const path = require("path");
 
 app.get("/", (req, res) => res.type('html').send(html));
 
@@ -13,20 +14,11 @@ const html = `
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Welcome to Kappa Sigma</title>
     <style>
-      <!--@import url("https://p.typekit.net/p.css?s=1&k=vnd5zic&ht=tk&f=39475.39476.39477.39478.39479.39480.39481.39482&a=18673890&app=typekit&e=css");
-      @font-face {
-        font-family: "neo-sans";
-        src: url("https://use.typekit.net/af/00ac0a/00000000000000003b9b2033/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/00ac0a/00000000000000003b9b2033/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/00ac0a/00000000000000003b9b2033/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-        font-style: normal;
-        font-weight: 700;
-      }-->
-      html {
-        font-family: neo-sans;
-        font-weight: 700;
-        font-size: calc(62rem / 16);
-      }
       body {
         background: #185012;
         font-family: Arial, sans-serif;
@@ -76,18 +68,29 @@ const html = `
     </style>
   </head>
   <body>
-    <div class="login-container">
+    <div id=login style="display: block;" class="login-container">
       <h2>LOG IN</h2>
-        <form action="/login" method="POST">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+      <form action="/login" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
             
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
             
-            <button type="submit">Login</button>
-        </form>
-      <div>
+        <button onclick="showScreen('home')">LOG IN</button>
+      </form>
+    <div>
+
+    <div id=home style="display: none;>
+      <h2>Kappa Sigma Fraternity</h2>
+    <div>
+
+    <script>
+      function showScreen(screenId) {
+        document.querySelectorAll('div').forEach(div => div.style.display = 'none');
+        document.getElementById(screenId).style.display = 'block';
+      }
+    </script>
   </body>
 </html>
 `
