@@ -73,7 +73,7 @@ const html = `
     </div>
 
     <div id="home" style="display: none;">
-      <img src="/images/homeImage.png" alt="Logo">
+      <img src="homeImage.png" alt="Logo">
     </div>
 
     <script>
