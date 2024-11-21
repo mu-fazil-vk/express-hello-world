@@ -79,14 +79,14 @@ const html = `
       <button onclick="showScreen('home')">LOG IN</button> 
     <div>
 
-    <div id="home" style="display: none;>
+    <div id="home" style="display: none;">
       <h2>Kappa Sigma Fraternity</h2>
     <div>
 
     <script>
       function showScreen(id) {
         document.querySelectorAll('div').forEach(div => div.style.display = 'none');
-        document.getElementById(screenId).style.display = 'block';
+        document.getElementById(id).style.display = 'block';
       }
     </script>
   </body>
